@@ -194,6 +194,11 @@ body {
     text-align: center;
 }
 
+.naira {
+    text-decoration-line: line-through;
+    text-decoration-style: double;
+}
+
 /* ---------------End of Products ---------------- */
 
 /* --------------- Cart ---------------- */
