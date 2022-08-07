@@ -28,6 +28,7 @@ class Products{
                 const {image} = item.fields.image.fields.file.url;
                 return{title, price, id, image}
             })
+            console.log(products)
             return products
         } catch (error) {
             console.log(error)
@@ -44,7 +45,7 @@ class UI {
             <!-- single products -->
             <article class="product">
                 <div class="img-container">
-                    <img src=${product.image} alt="product" class="product-img">
+                    <img src=${product.image} alt="product" class="product-img"/>
                     <button class="bag-btn" data-id=${product.id}>
                         <i class="fas fa-shopping-cart"></i>
                         add to cart
@@ -57,15 +58,21 @@ class UI {
             <!-- end of single products -->
             `;
         });
+        console.log(result)
         productsDOM.innerHTML = result;
 
     }
-
+    getBagButtons(){
+        const buttons = [...document.querySelectorAll('.bag-btn')];
+        buttons.forEach
+    }
 }
 
 // local storage
 class Storage{
-
+    static saveProducts(products){
+        localStorage.setItem("products", JSON.stringify(products))
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,5 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const products = new Products();
 
     // get all products
-    products.getProducts().then(products => ui.displayProducts(products))
+    products.getProducts().then(products => {
+        ui.displayProducts(products);
+        Storage.saveProducts(products)
+    }).then(() => {
+        ui.getBagButtons
+    })
 })
