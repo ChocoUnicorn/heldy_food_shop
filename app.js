@@ -20,12 +20,15 @@ class Products{
         
         try {
             let result = await fetch('products.json')
+            console.log(result)
             let data = await result.json();
+            console.log(data)
             let products = data.items;
+            console.log(products)
             products = products.map(item => {
                 const {title, price} = item.fields;
                 const {id} = item.sys;
-                const {image} = item.fields.image.fields.file.url;
+                const image = item.fields.image.fields.file.url;
                 return{title, price, id, image}
             })
             console.log(products)
