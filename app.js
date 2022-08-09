@@ -62,7 +62,6 @@ class UI {
             <!-- end of single products -->
             `;
         });
-        console.log(result)
         productsDOM.innerHTML = result;
 
     }
@@ -71,29 +70,56 @@ class UI {
         buttonsDOM = buttons;
         buttons.forEach(button => {
             let id = button.dataset.id;
-            let inCart = cart.find(item => {
-                item.id === id
-            });
+            let inCart = cart.find(item => item.id === id);
             if (inCart){
                 button.innerText = "In Cart";
                 button.disabled = true
-            } else {
-                button.addEventListener('click', (event)=>{
-                    event.target.innerText = "In Cart"
-                    event.target.disabled = true
-                    //get product from products
-                    let cartItem = {...Storage.getProduct(id), amount: 1}
-
-                    //add product to the cart
-                    cart = [...cart, cartItem]
-                    //save cart in local storage
-                    //set cart values
-                    //add and display cart item
-                    //show the cart
-
-                })
             }
+            button.addEventListener('click', event=>{
+                event.target.innerText = "In Cart"
+                event.target.disabled = true
+                //get product from products
+                let cartItem = {...Storage.getProduct(id), amount: 1}
+
+                //add product to the cart
+                cart = [...cart, cartItem]
+                //save cart in local storage
+                Storage.saveCart(cart)
+                //set cart values
+                this.setCartValues(cart);
+                //add and display cart item
+                this.addCartItem(cartItem)
+                //show the cart
+
+            })
         })
+        
+    }
+    setCartValues(cart){
+        let tempTotal = 0;
+        let itemsTotal = 0;
+        cart.map(item => {
+            tempTotal += item.price * item.amount;
+            itemsTotal += item.amount
+        })
+        cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
+        cartItems.innerText = itemsTotal;
+        
+    }
+    addCartItem(item){
+        const div = document.createElement('div');
+        div.classList.add('cart-item');
+        div.innerHTML = `<img src="./images/heldy_images/IMG_20211122_121441_210.jpg" alt="product">
+                <div>
+                    <h4>chocolate bread</h4>
+                    <h5>#3600.00</h5>
+                    <span class="remove-item">remove</span>
+                </div>
+                <div>
+                    <i class="fas fa-chevron-up"></i>
+                    <p class="item-amount">1</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>`
     }
 }
 
@@ -104,7 +130,10 @@ class Storage{
     }
     static getProduct(id){
         let products = JSON.parse(localStorage.getItem('products'))
-        return products.find(product => )
+        return products.find(product => product.id === id)
+    }
+    static saveCart(cart){
+        localStorage.setItem("cart", JSON.stringify(cart))
     }
 }
 
