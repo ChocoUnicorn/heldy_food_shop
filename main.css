@@ -191,7 +191,7 @@ body {
   transform: translateX(100%);
 }
 .showCart {
-  transform: translateX(40%);
+  transform: translateX(100%);
 }
 .transparentBcg {
   visibility: visible;
