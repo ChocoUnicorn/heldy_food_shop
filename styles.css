@@ -229,7 +229,7 @@ body {
 }
 
 .showCart {
-    transform: translateX(50%);
+    transform: translateX(0);
 }
 
 .transparentBcg {
