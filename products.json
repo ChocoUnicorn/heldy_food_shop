@@ -4,7 +4,7 @@
       "sys": { "id": "1" },
       "fields": {
         "title": "family package yoghurt",
-        "price": 10.99,
+        "price": 999.99,
         "image": { "fields": { "file": { "url": "./images/heldy_images/product-1.jpg" } } }
       }
     },
@@ -12,7 +12,7 @@
       "sys": { "id": "2" },
       "fields": {
         "title": "Beet root juice",
-        "price": 12.99,
+        "price": 1199.99,
         "image": { "fields": { "file": { "url": "./images/heldy_images/product-2.jpg" } } }
       }
     },
@@ -20,7 +20,7 @@
       "sys": { "id": "3" },
       "fields": {
         "title": "chocolate bread with parfait",
-        "price": 12.99,
+        "price": 2199.99,
         "image": { "fields": { "file": { "url": "./images/heldy_images/product-3.jpg" } } }
       }
     },
@@ -28,7 +28,7 @@
       "sys": { "id": "4" },
       "fields": {
         "title": "chocolate bread with yoghurt",
-        "price": 22.99,
+        "price": 2199.99,
         "image": { "fields": { "file": { "url":"./images/heldy_images/product-4.jpg" } } }
       }
     },
@@ -36,7 +36,7 @@
       "sys": { "id": "5" },
       "fields": {
         "title": "Banana bread",
-        "price": 88.99,
+        "price": 1499.99,
         "image": { "fields": { "file": { "url": "./images/heldy_images/product-5.jpg" } } }
       }
     },
@@ -44,7 +44,7 @@
       "sys": { "id": "6" },
       "fields": {
         "title": "oat bread",
-        "price": 32.99,
+        "price": 1499.99,
         "image": { "fields": { "file": { "url": "./images/heldy_images/product-6.jpg" } } }
       }
     },
@@ -52,7 +52,7 @@
       "sys": { "id": "7" },
       "fields": {
         "title": "oat bread with parfait",
-        "price": 45.99,
+        "price": 2199.99,
         "image": { "fields": { "file": { "url": "./images/heldy_images/product-7.jpg" } } }
       }
     },
@@ -60,7 +60,7 @@
       "sys": { "id": "8" },
       "fields": {
         "title": "Banana bread with parfait double",
-        "price": 33.99,
+        "price": 3999.99,
         "image": { "fields": { "file": { "url": "./images/heldy_images/product-8.jpg" } } }
       }
     }
